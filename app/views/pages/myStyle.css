@@ -1,4 +1,4 @@
-html* {
+* {
 	text-align: center;
 	background-color: tomato;
 
@@ -7,5 +7,5 @@ html* {
 p
 {
 background-color: tomato;
-color: blue;	
+color: blue;
 }
