@@ -11,7 +11,7 @@
   <%end%>
 </ul>
 <%end%>
-
+<!--calkiem sprytne prosty if sprawdzajacy czy sa jakies błedy jesli sa zostana one wyswietlone w formie listy, ciekawe jest to ze mozna zrobic literacje po błędach i dynamicznie utworzyć listę -->
 
 
 <%=form_for @article do |f| %>
@@ -27,5 +27,11 @@
 
 <p>
   <%= f.submit %>
+  <!-- Skad Rails wie że ma teraz utworzyć artykuł ? ? ?
+    Rails został tak napisany aby samemu się domyślać co ma zostać zrobione,
+  zobacz sam ze nie nadaliśmy nazwy dla tego przycisku a na stronie wyświetla
+się on jako 'Create article', wyglada na to ze metoda .subit po prostu słurzy do
+  przeniesienia sie na akcję article create
+end-->
 </p>
 <% end %>
