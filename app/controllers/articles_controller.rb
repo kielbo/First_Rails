@@ -1,7 +1,14 @@
 class ArticlesController < ApplicationController
+before_action :set_article, only:[:edit,:update,:show,:destroy]
 
 def index
   @articles = Article.all
+end
+
+def destroy
+  @articles.destroy
+  flash[:notice] = "Article was succesfully destoyed"
+  redirect_to articles_path
 end
 
   def new
@@ -25,16 +32,14 @@ Sprawdzamy czy artukul zostal zapisany prostym ifem , jesli operacja sie powiodl
 end
 
   def show
-    @article = Article.find(params[:id])
 
   end
 
   def edit
-    @article = Article.find(params[:id])
+
   end
 
   def update
-    @article = Article.find(params[:id])
     if @article.update(article_params)
     flash[:notice] = "Article was successfully updated"
     redirect_to article_path(@article)
@@ -45,6 +50,10 @@ end
   end
 
 private
+def set_article
+  @article = Article.find(params[:id])
+end
+
   def article_params
 =begin
 to jest dosc wazny temat z tego co sie dowiedzialem chodzi tu o bezpieczenstwo i to
