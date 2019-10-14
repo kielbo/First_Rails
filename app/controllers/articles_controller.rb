@@ -6,7 +6,7 @@ def index
 end
 
 def destroy
-  @articles.destroy
+  @article.destroy
   flash[:notice] = "Article was succesfully destoyed"
   redirect_to articles_path
 end

@@ -13,8 +13,12 @@
       <td><%=article.description%></td>
       <td><%=link_to 'Edit', edit_article_path(article)%></td>
       <td><%=link_to 'Show', article_path(article)%></td>
-      <td><%=link_to 'Delete', article_path(article),method: :delete,data:{confirm:"Are you sure ?"}%></td>
+      <td><button class="btn btn-danger"><%=link_to 'Delete', article_path(article),method: :delete,data:{confirm:"Are you sure ?"}%></button></td>
 
     <%end%>
   </tr>
 </table>
+
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  Tooltip on top
+</button>
