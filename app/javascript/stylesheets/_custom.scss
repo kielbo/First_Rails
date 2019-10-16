@@ -1,9 +1,9 @@
 h1
 {
-  color:yellow;
+  color:navy;
 }
 .navbar{
-  background-color: tomato;
+  background-color:#5e0808;
   color:navy;
   text-align: justify;
 }
@@ -23,4 +23,29 @@ h1
   color: #fff;
   text-decoration: none;
   
+}
+#test_erb{
+text-decoration:none;
+color:white;
+}
+#text_erb:hover
+{
+  color:navy;
+}
+.container
+{
+  width:1000px;
+}
+.center
+{
+  text-align: center;
+}
+.RbLink
+{
+  text-decoration: none;
+  color:grey;
+}
+.RbLink:hover
+{
+  text-decoration:none;
 }
