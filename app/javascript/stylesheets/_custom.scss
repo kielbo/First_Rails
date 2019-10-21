@@ -4,13 +4,6 @@ body
  font-family:'Open Sans', sans-serif;
  color: #ffffff;
 }
-
-
-
-h1
-{
-  color:navy;
-}
 .navbar{
   background-color:#5e0808;
   color:navy;
@@ -49,6 +42,7 @@ color:white;
 .center
 {
   text-align:center;
+  color: black;
 }
 .RbLink
 {
@@ -119,4 +113,19 @@ float: left;
 
 margin-left: 15px;
 
+}
+.list-group-item
+{
+color:black;
+}
+.article-action
+{
+padding:5px;
+color:#000000;
+text-align:center;
+
+}
+.description
+{
+margin-top:0px;
 }

@@ -44,7 +44,7 @@ end
     flash[:notice] = "Article was successfully updated"
     redirect_to article_path(@article)
   else
-    render ' edit'
+    render 'edit'
 
   end
   end
