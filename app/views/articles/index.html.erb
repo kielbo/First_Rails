@@ -1,6 +1,4 @@
 
-<!-- table->tr-th -->
-  <!-- Tutaj ciekawe zastosowanie, tworzymy table ustawiamy wiersze tytulowe, a potem puszczamy petle przez zmienna articles i uzupelniamy kolejne zedy tabelki jej wartosciami (zmiennej)dodatkowo dodane sa dwa pola z linkami do edycji i wyswietlenia wartości wpisu. -->
   <%@articles.each do |article|%>
     <div class="row">
       <div class="card col-md-8 offset-md-2">
@@ -9,6 +7,14 @@
         </div>
         <div class="article-description center">
           <%= truncate(article.description, length: 100) %>
+          <div class="article-info">
+          <small>
+          Created by:<%= article.user.username if article.user %>
+          Created at:<%= time_ago_in_words(article.created_at)%> ago
+          Last update at:<%= time_ago_in_words(article.updated_at)%>
+        </div>
+        </small>
+
         </div>
         <div class="article-action">
      <%=link_to 'Edit', edit_article_path(article),class:"btn btn-primary"%>
