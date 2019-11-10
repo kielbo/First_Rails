@@ -1,30 +1,9 @@
+<h1 align="center">Listing all article</h1>
+<div align="center">
+  <%= will_paginate %>
+</div>
+<%= render'article',obj:@articles %>
+<div align='center'>
+  <%= will_paginate %>
+</div>
 
-  <%@articles.each do |article|%>
-    <div class="row">
-      <div class="card col-md-8 offset-md-2">
-        <div class ="article-title center">
-          <%= link_to article.title, article_path(article)%>
-        </div>
-        <div class="article-description center">
-          <%= truncate(article.description, length: 100) %>
-          <div class="article-info">
-          <small>
-          Created by:<%= article.user.username if article.user %>
-          Created at:<%= time_ago_in_words(article.created_at)%> ago
-          Last update at:<%= time_ago_in_words(article.updated_at)%>
-        </div>
-        </small>
-
-        </div>
-        <div class="article-action">
-     <%=link_to 'Edit', edit_article_path(article),class:"btn btn-primary"%>
-     <%=link_to 'Show', article_path(article),class:"btn btn-info"%>
-     <button class="btn btn-danger"><%=link_to 'Delete', article_path(article),method: :delete,data:{confirm:"Are you sure ?"}%></button>
-    </div>
-      </div>
-    </div>
-    <%end%>
-
-<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-  Tooltip on top
-</button>
