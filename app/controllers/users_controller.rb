@@ -1,9 +1,16 @@
 class UsersController < ApplicationController
+before_action :set_user,only:[:edit,:update,:show] #wykonaj akcje set user przed metodami edit update, show // dzieki temu nasza zmienna @user jest gotowa do uzycia tzn wypełniona odpowiednimi danymi
 def index
-  @users=User.all
+  @users=User.paginate(page:params[:page], per_page:5)
 end
 def new
-  @user=User.new
+  @user=User.new(user_params)
+  if @user.save
+    flash[:succes]="Welcome to alpha blog #{@user.username}"
+    redirect_to articles_path
+  else
+    render'new'
+  end
 end
 
 def create
@@ -18,11 +25,9 @@ def create
 end
 
 def edit
-  @user=User.find(params[:id])
 end
 
 def update
-  @user=User.find(params[:id])
   if @user.update(user_params)
     flash[:succes]="Your account was updated successfully"
     redirect_to articles_path
@@ -33,13 +38,15 @@ end
 
 
 def show
-  @user=User.find(params[:id])
+  @user_articles= @user.articles.paginate(page:params[:page],per_page:5)
 end
 
 
 private
 def user_params
   params.require(:user).permit(:username,:email,:password)
+end 
+def set_user
+  @user = User.find(params[:id])
 end
 end
-
